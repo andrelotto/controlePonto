@@ -109,7 +109,7 @@
                                     <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $tempo->total_time; ?></div>
+                                    <div class="huge"><?php echo ($tempo->total_time)? $tempo->total_time : '00:00:00' ; ?></div>
                                     <div>Horas Utilizadas</div>
                                 </div>
                             </div>
@@ -236,7 +236,12 @@
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
     $(document).ready(function() {
-        $('#dataTables-example').dataTable();
+        $('#dataTables-example').dataTable({
+                "language": {
+                 "info": "Exibindo página _PAGE_ of _PAGES_",
+                 
+                }
+            });
     });
     </script>
 
